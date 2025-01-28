@@ -42,7 +42,8 @@ const recipesSchema = new Schema({
         //dentro de un array (movie referencia la coleccion)
     },
     fechaCreacion: {
-        type: Date
+        type: Date,
+        default: Date.now
         //esto guardaria los id de las pelis en un apartado de favoritos 
         //dentro de un array (movie referencia la coleccion)
     }

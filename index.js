@@ -1,7 +1,7 @@
 // Requerimos el paquete de express para crear la app
 const express = require("express");
 const recipesRouter = require('./routes/recipesRouter');
-// const recipesRouter = require('./routes/usersRouter')
+const usersRouter = require('./routes/usersRouter')
 // const recipesRouter = require('./routes/loginRouter');
 require('dotenv').config()
 const connectToDatabase = require('./db/db')
@@ -16,7 +16,7 @@ connectToDatabase();
 
 
 app.use('/api', recipesRouter );
-// app.use('/api', usersRouter);
+app.use('/api', usersRouter);
 // app.use('/api',loginRouter);
 
 app.listen(3000, () => {
