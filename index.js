@@ -15,7 +15,7 @@ app.use(express.json());
 connectToDatabase();
 
 
-app.use('/api', recipesRouteresRouter );
+app.use('/api', recipesRouter );
 // app.use('/api', usersRouter);
 // app.use('/api',loginRouter);
 
