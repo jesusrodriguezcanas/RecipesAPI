@@ -1,12 +1,13 @@
 const express = require('express');
-const { addRecipe, getAllRecipes, delByNombre, updateUser, getUserById, getNameContent} = require("../controllers/userController");
+const { addRecipe } = require('../controllers/recipesController');
+// const { addRecipe, getAllRecipes, delByNombre, updateUser, getUserById, getNameContent} = require("../controllers/userController");
 // const { verifyToken, verifyAdmin } = require ( "../middleware/auth");
 const router = express.Router();
 
 
 
 
-// router.post("/users", addUser);
+router.post("/recipes", addRecipe);
 // router.get("/users", getAllUsers);
 // router.delete("/users/:idUser", delByNombre);
 // router.patch("/users/:idUser", updateUser);
