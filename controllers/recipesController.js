@@ -13,7 +13,7 @@ const addRecipe = async (req,res) => {
 
   const getRecipeId = async (req,res) => {
     try {
-        const idRecipe = req.payload._id;
+        const idRecipe = req.params.idRecipe;
         const recipe = await recipesModel.findById(idRecipe);
         if (!recipe) {
           return res.status(404).send("Receta no existe");
@@ -22,9 +22,19 @@ const addRecipe = async (req,res) => {
       } catch (error) {
         res.status(500).send({ status: "failed", error: error.message})
       }
-    }
+    };
 
-  module.exports = { addRecipe, getRecipeId };
+    
+const getLastRecipes = async (req,res) => {
+    try {
+      const recipes = await recipesModel.find().sort({ createdAt: -1 }).limit(5);
+      res.status(200).send(recipes);
+    } catch (error) {
+      res.status(500).send({ status: 'Failed', error: error.message})
+    }
+    };
+
+  module.exports = { addRecipe, getRecipeId, getLastRecipes };
 
 
   //getAllUsers, delByNombre, updateUser, getUserById, getNameContent
