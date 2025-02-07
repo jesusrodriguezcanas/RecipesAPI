@@ -2,7 +2,7 @@
 const express = require("express");
 const recipesRouter = require('./routes/recipesRouter');
 const usersRouter = require('./routes/usersRouter')
-// const recipesRouter = require('./routes/loginRouter');
+const loginRouter = require('./routes/loginRouter');
 require('dotenv').config()
 const connectToDatabase = require('./db/db')
 
@@ -17,7 +17,7 @@ connectToDatabase();
 
 app.use('/api', recipesRouter );
 app.use('/api', usersRouter);
-// app.use('/api',loginRouter);
+app.use('/api',loginRouter);
 
 app.listen(3000, () => {
   console.log("server is running http://localhost:3000");

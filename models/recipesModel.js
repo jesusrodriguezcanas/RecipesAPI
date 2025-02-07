@@ -6,19 +6,19 @@ const Schema = mongoose.Schema;
 const recipesSchema = new Schema({
     title:{
         type: String,
-        required: [true, "El nombre es obligatorio"]
+        required: [true, "El titulo es obligatorio"]
     },
     description: {
         type: String,
-        required: [true, "El apellido es requerido"]
+        required: [true, "La descripcion es requerida"]
     },
     ingredients: {
         type: [String],
-        required: [true, "contraseña obligatoria"]
+        required: [true, "Ingredientes obligatorios"]
     },
     category: {
     type: String,
-        required: [true, "email obligatoria"],
+        required: [true, "categoría obligatoria"],
         enum: [ "postres", "bebidas", "carne"],
         default: "postres"
     },

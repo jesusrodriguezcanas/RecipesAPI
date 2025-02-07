@@ -13,7 +13,7 @@ const usersSchema = new Schema({
         required: [true, "El email es requerido"]
     },
     password: {
-        type: [String],
+        type: String,
         required: [true, "contraseña obligatoria"]
     },
     role: {
@@ -22,7 +22,8 @@ const usersSchema = new Schema({
         default: "user"
     },
     favoriteRecipes: {
-        type: [ObjectId]
+        type: [ObjectId],
+        default: []
         //esto guardaria los id de las pelis en un apartado de favoritos 
         //dentro de un array (movie referencia la coleccion)
     },
